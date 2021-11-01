@@ -107,7 +107,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="shop-single.html">
-                            <img src="./assets/img/product/skate/complete_skate/creature_set1.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/skate/complete_skate/creature_set1.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Creature Set</a>
@@ -123,7 +123,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="shop-single.html">
-                            <img src="./assets/img/product/skate/complete_skate/simon_bannerot.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/skate/complete_skate/simon_bannerot.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Simon Banerot Set</a>
@@ -139,7 +139,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="shop-single.html">
-                            <img src="./assets/img/product/skate/complete_skate/enjoi_1.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/skate/complete_skate/enjoi_1.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark"> Deck Enjoi</a>
@@ -179,7 +179,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="#">
-                            <img src="./assets/img/product/skate/decks/baker_1.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/skate/decks/baker_1.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">                        
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Baker Deck</a>
@@ -194,7 +194,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="shop-single.html">
-                            <img src="./assets/img/product/skate/decks/dreg_deck_1.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/skate/decks/dreg_deck_1.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Dreg Deck Red </a>
@@ -210,7 +210,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="shop-single.html">
-                            <img src="./assets/img/product/hardware/bones_speedcream.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/hardware/bones_speedcream.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Bones Speed Cream </a>
@@ -226,7 +226,7 @@
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <a href="shop-single.html">
-                            <img src="./assets/img/product/skate/bearing/swiss_flash.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/product/skate/bearing/swiss_flash.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-light">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">FKD Swiss flash Bearing </a>
@@ -258,7 +258,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/new/new1.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/new/new1.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-white">                        
                             <p href="shop-single.html" class="h2 text-decoration-none text-black">Discount All Product 10%</p>
@@ -271,7 +271,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/new/new2.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/new/new2.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-white">
                             <p href="shop-single.html" class="h2 text-decoration-none text-black">Special offer for lockdown</p>
@@ -285,7 +285,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/new/new3.jpg" class="card-img-top" alt="...">
+                            <img src="./main/img/new/new3.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-white">
                             <p href="shop-single.html" class="h2 text-decoration-none text-black">Sign up for free, Get a DG Blackcard</p>
@@ -309,32 +309,32 @@
             
                 <div class="card-group">
                     <div class="card">
-                        <img src="./assets/img/view/shop1.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/shop1.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/view/shop4.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/shop4.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/view/shop2.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/shop2.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/view/shop3.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/shop3.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="card-group">
                     <div class="card">
-                        <img src="./assets/img/view/view1.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/view1.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/view/view2.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/view2.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/view/view3.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/view3.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/view/view4.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/view/view4.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
 
@@ -351,32 +351,32 @@
             
                 <div class="card-group">
                     <div class="card">
-                        <img src="./assets/img/review/review_1.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_1.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/review/review_2.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_2.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/review/review_3.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_3.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/review/review_4.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_4.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="card-group">
                     <div class="card">
-                        <img src="./assets/img/review/review_5.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_5.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/review/review_6.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_6.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/review/review_7.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_7.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="card">
-                        <img src="./assets/img/review/review_8.jpg" class="card-img-top" alt="...">
+                        <img src="./main/img/review/review_8.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
 
