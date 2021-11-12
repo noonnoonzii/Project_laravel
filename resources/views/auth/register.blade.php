@@ -1,4 +1,4 @@
-@extends('layouts.register.index')
+@extends('layouts.main.index')
 
 @section('content')
 <section class="ftco-section">
@@ -32,7 +32,7 @@
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                             <input id="lastname" type="text" class="form-control text-center @error('lastname') is-invalid @enderror" placeholder="Lastname" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
 
                                             @error('lastname')
@@ -42,7 +42,7 @@
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                             <input id="phone" type="text" class="form-control text-center @error('phone') is-invalid @enderror" placeholder="Phone" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                                             @error('phone')
@@ -52,7 +52,7 @@
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                             <input id="email" type="email" class="form-control text-center @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                             @error('email')
@@ -62,7 +62,7 @@
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                             <input id="address" type="text" class="form-control text-center @error('address') is-invalid @enderror" placeholder="Address" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
 
                                             @error('address')
@@ -72,7 +72,7 @@
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group">
                                             <input id="password" type="password" class="form-control text-center @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="new-password">
 
                                             @error('password')
@@ -82,15 +82,17 @@
                                             @enderror
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group md-8">
                                             <input id="password-confirm" type="password" class="form-control text-center" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
 
-                                    <div class="form-group row mb-0">
-                                            <button type="submit" class="form-control btn btn-primary rounded submit px-3">
+                                    <div class="form-group mb-6">
+                                        <div class="col mb-8">
+                                            <button type="submit" class="form-control btn btn-dark rounded submit px-4">
                                                 {{ __('Register') }}
                                             </button>
+                                        </div>
                                         </div>
                                     </div>
                                 </form>    

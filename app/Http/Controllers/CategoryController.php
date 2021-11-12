@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       $data = type_product::latest()->paginate(5);
+       $data = type_product::first()->paginate(5);
         return view('admin.category.index', compact('data'));
                 
     }
@@ -38,20 +38,17 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $validatadData = $request->validate([
-            'typeproduct_name' => 'required|unique:type_product|max:255'
-        ],
-        [
-            
-
-        ]);
+       // $validatadData = $request->validate([
+        // 'typeproduct_name' => 'required|unique:type_product|max:255'
+        //]);
 
 
         $category = new type_product;
         $category->typeproduct_name = $request->name;
         $category->save();
 
-        return redirect('/admin/category/index');
+        return redirect('/admin/category/index')
+                        ->with('success', 'Category Created successfully.');
                         
     }
 
@@ -73,10 +70,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_typeproduct)
     {
         //
-        return view ('admin.category.edit');
+        $type = type_product::find($id_typeproduct);
+        //dd($type);
+        return view ('admin.category.edit',compact('type'));
     }
 
     /**
@@ -86,16 +85,18 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, type_product $type_product)
+    public function update(Request $request, $id_typeproduct)
     {
-        //
-        $request->validate([
-            'typeproduct_name' => 'required'
-        ]);
+        //$validatedData = $request->validate([
+        //    'typeproduct_name' => 'required'
+        //]);
 
-        $type_product->update($request->all());
+        $type = type_product::find($id_typeproduct);
+        $type->name = $request->typeproduct_name;
+        $type->save;
 
-        return redirect()->route('admin.category.index');
+        return redirect ('admin/category/index')
+                        ->with('success','Category Updated succcessfully.');
     }
 
     /**
@@ -104,10 +105,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(type_product $type_product)
+    public function destroy($id_typeproduct)
     {
         //
-        $type_product->delete();
-        return redirect()-route('admin.category.index');
+        type_product::destroy($id_typeproduct);
+        return redirect('admin/category/index')
+                ->with('success','Category Deleted successfully.');
     }
 }

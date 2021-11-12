@@ -28,13 +28,13 @@ Coded by www.creative-tim.com
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="{{asset('/back_end/admin/css/bootstrap.min.css')}}" rel="stylesheet" />
-  <link href="{{asset('/back_end/admin/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
+  <link href="{{url('back_end/admin/css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link href="{{url('back_end/admin/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{asset('/back_end/admin/demo/demo.css')}}" rel="stylesheet" />
+  <link href="{{url('back_end/admin/demo/demo.css')}}" rel="stylesheet" />
 </head>
 
-<body class="">
+<body>
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
@@ -44,7 +44,7 @@ Coded by www.creative-tim.com
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="{{route('home')}}" class="simple-text logo-normal">
           Drag SkateShop 
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
@@ -54,25 +54,25 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="{{url('/admin/index')}}">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./home_pic.html">
+            <a href="{{route('home_pic')}}">
               <i class="nc-icon nc-diamond"></i>
               <p>Change Home Picture</p>
             </a>
           </li>
           <li>
-            <a href="./product.html">
+            <a href={{Route('product')}}>
               <i class="nc-icon nc-pin-3"></i>
               <p>Product</p>
             </a>
           </li>
           <li>
-            <a href="./news.html">
+            <a href="{{route('news')}}">
               <i class="nc-icon nc-single-02"></i>
               <p>News</p>
             </a>
@@ -84,17 +84,30 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="{{route('users')}}">
                 <i class="nc-icon nc-caps-small"></i>
                 <p>Profile</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
             </a>
           </li>
         </ul>
       </div>
     </div>
+  </div>
+@yield('content');
+<!--   Core JS Files   -->
+<script src="{{url('back_end/admin/js/core/jquery.min.js')}}"></script>
+<script src="{{url('back_end/admin/js/core/popper.min.js')}}"></script>
+<script src="{{url('back_end/assets/js/core/bootstrap.min.js')}}"></script>
+<script src="{{url('back_end/admin/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chart JS -->
+<script src="{{url('back_end/admin/js/plugins/chartjs.min.js')}}"></script>
+<!--  Notifications Plugin    -->
+<script src="{{url('back_end/admin/js/plugins/bootstrap-notify.js')}}"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{{url('back_end/admin/js/paper-dashboard.min.js?v=2.0.1')}}" type="text/javascript"></script> <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+<script src="{{url('back_end/admin/demo/demo.js')}}"></script>
+</body>
+
+</html>

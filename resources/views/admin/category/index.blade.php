@@ -74,9 +74,17 @@
                 <div class="card-header">
                   <h4 class="card-title text-danger">Manage Category</h4>
                       
-                     <div class="form-group">
+                    <div class="form-group">
                     <a href="{{ url('/admin/category/create') }}" class="btn btn-primary btn-round">Create</a>
-                  </div>
+                    </div>
+                    @if($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{$message}}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    @endif
                   
                 
                 </div>
@@ -101,19 +109,18 @@
                         </th>
                       </thead>
                       
-                        @foreach ($data as $key => $value)
+                        @foreach ($data as $key => $category_id)
                             <tr>
-                              <td>{{ $value->id_typeproduct }}</td>
-                              <td>{{ $value->typeproduct_name }}</td>
-                              <td>{{ $value->created_at }}</td>
-                              <td>{{ $value->updated_at }}</td>
+                              <td>{{ $category_id->id_typeproduct }}</td>
+                              <td>{{ $category_id->typeproduct_name }}</td>
+                              <td>{{ $category_id->created_at }}</td>
+                              <td>{{ $category_id->updated_at }}</td>
                               <td>
-                               <form action='{{ url('admin.category.index','$value->id_typeproduct') }}'>
-                                  <a href="{{ url('admin.category.show','$value->id_type_product') }}" class="btn btn-primary btn-round">Show</a>
-                                  <a href="{{ url('admin.category.edit','$value->id_type_product') }}" class="btn btn-warning btn-round">Edit</a>
+                               <form action='{{ url('admin.category.index','$category_id->id_typeproduct') }}' method="post">
+                                  <a href="{{ url('admin/category/edit/'.$category_id->id_typeproduct) }}" class="btn btn-warning btn-round">Edit</a>
                                   {{csrf_field()}}
-                                  @method('delete')
-                                  <button type="submit"  class="btn btn-danger btn-round">Delete</button>
+                                  
+                                  <a href="{{url('/admin/category/delete/'.$category_id->id_typeproduct)}}" class="btn btn-danger btn-round text-white">Delete</a>
                               </td> 
                             </tr>
                         @endforeach
