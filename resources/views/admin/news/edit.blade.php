@@ -64,67 +64,50 @@
         </div>
       </div>
     </nav>
-    {{-- End nav bar --}}
-
-    {{-- Start Manage Category --}}
+    <!-- End Navbar -->
     <div class="content">
-        <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title text-danger">Manage News</h4>
-                      
-                    <div class="form-group">
-                    <a href="{{ url('/admin/news/create') }}" class="btn btn-primary btn-round">Create</a>
-                    </div>
-                    @if($message = Session::get('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                      {{$message}}
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    @endif
-                  
-                
+        <div class="card card-user">
+          <div class="card-header">
+            <h5 class="card-title text-danger">Edit News</h5>
+            <a class="btn btn-primary btn-round" type="submit" href="{{route('news')}}">Back</a>
+          </div>
+      <form>
+          <div class="row">
+            <div class="col-3">
+              <img class="mr-3" src="../assets/img/logo.jpg" style="width: 50%;position: relative; " alt="Generic placeholder image">
+              <input type="file" class="form-control-file ml-3" id="exampleFormControlFile1">
+
+            </div>
+
+            <div class="col-9">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Header News</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="card-body">
-                  <div class="table">
-                    <table class="table">
-                      <thead class="text-primary">
-                        <th>
-                            No.
-                        </th>
-                        <th>
-                          Category Name
-                        </th>
-                        <th>
-                          Create_at
-                        </th>
-                        <th>
-                          Update_at
-                        </th>
-                        <th>
-                          action
-                        </th>
-                      </thead>
-                      
-                            <tr>
-                              <td>New</td>
-                              <td>New</td>
-                              <td>New</td>
-                              <td>New</td>
-                              <td>
-                               <form action='' method="post">
-                                  <a href="{{url('admin/news/edit')}}" class="btn btn-warning btn-round">Edit</a>
-                                  {{csrf_field()}}
-                                  <a href="#" class="btn btn-danger btn-round text-white">Delete</a>
-                              </td> 
-                    </table>
-                  </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Content News</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+      
+                <button type="submit" class="btn btn-danger btn-round">Save</button>
+              </form>
+            </div>
+          </form>
+
+            </div>
+              <!-- <div class="media-body">
+                <label class="text-dark"><b>หัวข้อข่าวสาร</b></label>
+                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+
+                <label class="text-dark"><b>เนื้อหาข่าวใหม่</b></label>
+                <input type="text"  class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+              <div class="row">
+                <div class="update ml-auto mr-auto">
+                  <button type="submit" class="btn btn-danger btn-round">บันทึก</button>
                 </div>
               </div>
-            </div>
-          </div>
+        </div> -->
       </div>
-    {{-- End Manage Category --}}
+
+
+</div>

@@ -24,6 +24,7 @@ class NewsController extends Controller
     public function create()
     {
         //
+        return view ('admin/news/create');
     }
 
     /**
@@ -57,6 +58,7 @@ class NewsController extends Controller
     public function edit($id)
     {
         //
+        return view('admin/news/edit');
     }
 
     /**

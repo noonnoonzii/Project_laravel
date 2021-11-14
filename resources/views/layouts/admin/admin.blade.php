@@ -28,10 +28,10 @@ Coded by www.creative-tim.com
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="{{url('back_end/admin/css/bootstrap.min.css')}}" rel="stylesheet" />
-  <link href="{{url('back_end/admin/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
+  <link href="{{url('admin/asset/css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link href="{{url('admin/asset/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{url('back_end/admin/demo/demo.css')}}" rel="stylesheet" />
+  <link href="{{url('admin/asset/demo/demo.css')}}" rel="stylesheet" />
 </head>
 
 <body>
@@ -40,7 +40,7 @@ Coded by www.creative-tim.com
       <div class="logo">
         <a href="https://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="{{asset('back_end/admin/img/logo.jpg')}}">
+            <img src="{{asset('admin/asset/img/logo.jpg')}}">
           </div>
           <!-- <p>CT</p> -->
         </a>
@@ -95,19 +95,19 @@ Coded by www.creative-tim.com
   </div>
 @yield('content');
 <!--   Core JS Files   -->
-<script src="{{url('back_end/admin/js/core/jquery.min.js')}}"></script>
-<script src="{{url('back_end/admin/js/core/popper.min.js')}}"></script>
-<script src="{{url('back_end/assets/js/core/bootstrap.min.js')}}"></script>
-<script src="{{url('back_end/admin/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{url('admin/asset/js/core/jquery.min.js')}}"></script>
+<script src="{{url('admin/asset/js/core/popper.min.js')}}"></script>
+<script src="{{url('admin/asset/js/core/bootstrap.min.js')}}"></script>
+<script src="{{url('admin/asset/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
 <!--  Google Maps Plugin    -->
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chart JS -->
-<script src="{{url('back_end/admin/js/plugins/chartjs.min.js')}}"></script>
+<script src="{{url('admin/asset/js/plugins/chartjs.min.js')}}"></script>
 <!--  Notifications Plugin    -->
-<script src="{{url('back_end/admin/js/plugins/bootstrap-notify.js')}}"></script>
+<script src="{{url('admin/admin/js/plugins/bootstrap-notify.js')}}"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="{{url('back_end/admin/js/paper-dashboard.min.js?v=2.0.1')}}" type="text/javascript"></script> <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="{{url('back_end/admin/demo/demo.js')}}"></script>
+<script src="{{url('admin/asset/js/paper-dashboard.min.js?v=2.0.1')}}" type="text/javascript"></script> <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+<script src="{{url('admin/asset/demo/demo.js')}}"></script>
 </body>
 
 </html>

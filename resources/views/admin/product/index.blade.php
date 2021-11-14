@@ -65,14 +65,16 @@
           </div>
         </nav>
         <!-- End Navbar -->
+        <!-- Start Product manage -->
         <div class="content">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
                     <h4 class="card-title text-danger">Manage Product</h4>
+
                     <div class="form-group">
-                    <button href="{{ url('/admin/product/create') }}" class="btn btn-primary btn-round">Create</button>
+                    <a href="{{ url('/admin/product/create') }}" class="btn btn-primary btn-round">Create</a>
                     </div>
                     @if($message = Session::get('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -89,47 +91,41 @@
                     <table class="table">
                       <thead class="text-primary">
                         <th>
-                          Image
+                            No.
                         </th>
                         <th>
-                          Name
+                          Category Name
                         </th>
                         <th>
-                          Category
+                          Create_at
                         </th>
                         <th>
-                          Price
+                          Update_at
                         </th>
                         <th>
-                            Action
+                          action
                         </th>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            Dakota Rice
-                          </td>
-                          <td>
-                            Niger
-                          </td>
-                          <td>
-                            Oud-Turnhout
-                          </td>
-                          <td>
-                            $36,738
-                          </td>
-                          <th class="text-left">
-                            <a href="#" class="btn btn-warning btn-round">
-                              Edit
-                            </a>
-                            <button class="btn btn-danger btn-round">Delete</button>
-                          </th>
-                      </tbody>
+                            <tr>
+                              <td>#</td>
+                              <td>#</td>
+                              <td>#</td>
+                              <td>#</td>
+                              <td>
+                               <form action='' method="post">
+                                  <a href="{{ url('admin/product/edit/') }}" class="btn btn-warning btn-round">Edit</a>
+                                  {{csrf_field()}}
+                                  
+                                  <a href="{{url('/admin/product/delete/')}}" class="btn btn-danger btn-round text-white">Delete</a>
+                              </td> 
+                            </tr>
+
+
                     </table>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-</div>
+      </div>
+    {{-- End Manage Category --}}

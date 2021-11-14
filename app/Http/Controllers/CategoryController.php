@@ -72,9 +72,8 @@ class CategoryController extends Controller
      */
     public function edit($id_typeproduct)
     {
-        //
+        ////dd($type);
         $type = type_product::find($id_typeproduct);
-        //dd($type);
         return view ('admin.category.edit',compact('type'));
     }
 
