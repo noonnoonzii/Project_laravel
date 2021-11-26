@@ -19,9 +19,14 @@
                     <strong>Email: </strong>{{Auth::user()->email}}<br>
                     <strong>Phone: </strong>{{Auth::user()->phone}}<br>
                     <strong>Address: </strong>{{Auth::user()->address}}<br>
-                    <a href="{{route('index')}}" class="btn btn-danger">Product Management</a>
-                    <a href="" class="btn btn-success">Home</a>
-                    <a href="" class="btn btn-warning text-white">Edit</a>
+                    
+                    @if (Auth::user()->check())
+                        <a href="{{route('index')}}" class="btn btn-danger">Product Management</a>
+                    @endif
+                    
+                    
+                    <a href="/" class="btn btn-success">Home</a>
+                    <a href="{{route('users')}}" class="btn btn-warning text-white">Edit</a>
                 </div>
             </div>
         </div>

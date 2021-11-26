@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
+use File;
 
 class NewsController extends Controller
 {
@@ -13,7 +17,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin/news/index');
+        $data = News::latest()->paginate(3);
+        return view('admin/news/index',compact('data'));
     }
 
     /**
@@ -36,6 +41,21 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         //
+        $news = new News;
+        $news->header_news = $request->name;
+        $news->content_news = $request->text;
+        
+        if ($request->hasFile('image')) {
+            $filename = Str::random(6).'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'/admin/asset/img/news/',$filename);
+            Image::make(public_path().'/admin/asset/img/news/'.$filename);
+            $news->image_new = $filename;
+        }else{
+            $news->image_new = 'nopic.png';
+        }
+        $news->save();
+        return redirect()->route('news')
+                        ->with('success','Created News successfully');
     }
 
     /**
@@ -55,10 +75,11 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_newinfo)
     {
         //
-        return view('admin/news/edit');
+        $news = News::find($id_newinfo);
+        return view('admin/news/edit',compact('news'));
     }
 
     /**
@@ -68,9 +89,28 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_newinfo)
     {
         //
+        if ($request ->hasFile('image')) {
+            $news = News::find($id_newinfo);
+            if ($news->image_new != 'nopic.png') {
+                File::delete(public_path().'admin/asset/img/product/'.$news->image_new);
+            }
+            $filename = Str::random(11).'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'/admin/asset/img/news/',$filename);
+            Image::make(public_path().'/admin/asset/img/news/'.$filename);
+            $news->image_new = $filename;
+            $news->header_news = $request->head;
+            $news->content_news = $request->content;
+        }else{
+            $news = News::find($id_newinfo);
+            $news->header_news = $request->head;
+            $news->content_news = $request->content;
+        }
+        $news->save();
+        return redirect('/admin/news/index')
+                    ->with('success','News Updated successfully');
     }
 
     /**
@@ -79,8 +119,11 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_newinfo)
     {
         //
+        News::destroy($id_newinfo);
+            return redirect('/admin/news/index')
+                    ->with('success','Deleted News successfully');
     }
 }

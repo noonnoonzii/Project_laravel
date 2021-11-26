@@ -1,4 +1,7 @@
 @extends('layouts.admin.admin')
+@section('content')
+    
+@endsection
     <!-- Navbar -->
     <div class="main-panel">
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">

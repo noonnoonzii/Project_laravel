@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -13,7 +13,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('admin/users/index');
+        //$users = User::find($id);
+        return view('admin/users/index');//compact('users')
     }
 
     /**
@@ -35,6 +36,12 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
+        $users = new User();
+        $users->name = $request->name;
+        $users->lastname = $request->lname;
+        $users->phone = $request->phone;
+        $users->email = $request->email;
+        $users->address = $request->address;
     }
 
     /**
@@ -69,6 +76,13 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $users = User::find($id);
+        $users->name = $request->name;
+        $users->lastname = $request->lname;
+        $users->phone = $request->phone;
+        $users->email = $request->email;
+        $users->address = $request->address;
+
     }
 
     /**

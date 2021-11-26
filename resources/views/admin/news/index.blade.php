@@ -96,30 +96,43 @@
                             No.
                         </th>
                         <th>
-                          Category Name
+                          Header News
                         </th>
                         <th>
-                          Create_at
+                          Content News
                         </th>
                         <th>
-                          Update_at
+                          Image News
+                        </th>
+                        <th>
+                          Created_at
+                        </th>
+                        <th>
+                          Updated_at
                         </th>
                         <th>
                           action
                         </th>
                       </thead>
-                      
-                            <tr>
-                              <td>New</td>
-                              <td>New</td>
-                              <td>New</td>
-                              <td>New</td>
+                      @foreach ($data as $key => $news)
+                          <tr>
+                              <td>{{$news->id_newinfo}}</td>
+                              <td>{{$news->header_news}}</td>
+                              <td>{{$news->content_news}}</td>
                               <td>
-                               <form action='' method="post">
-                                  <a href="{{url('admin/news/edit')}}" class="btn btn-warning btn-round">Edit</a>
+                                <img src="{{asset('admin/asset/img/news/'.$news->image_new)}}" alt="" style="width: 100px">
+                              </td>
+                              <td>{{$news->created_at}}</td>
+                              <td>{{$news->updated_at}}</td>
+                              <td>
+                               <form action='{{url('admin/news/index','$news->id_newinfo')}}' method="post">
+                                  <a href="{{url('/admin/news/edit/'.$news->id_newinfo)}}" class="btn btn-warning btn-round">Edit</a>
                                   {{csrf_field()}}
-                                  <a href="#" class="btn btn-danger btn-round text-white">Delete</a>
+                                  <a href="{{url('/admin/news/delete/'.$news->id_newinfo)}}" class="btn btn-danger btn-round text-white">Delete</a>
                               </td> 
+                            </tr>
+                      @endforeach
+                            
                     </table>
                   </div>
                 </div>

@@ -118,7 +118,7 @@
                               <td>
                                <form action='{{ url('admin.category.index','$category_id->id_typeproduct') }}' method="post">
                                   <a href="{{ url('admin/category/edit/'.$category_id->id_typeproduct) }}" class="btn btn-warning btn-round">Edit</a>
-                                  {{csrf_field()}}
+                                  @csrf
                                   
                                   <a href="{{url('/admin/category/delete/'.$category_id->id_typeproduct)}}" class="btn btn-danger btn-round text-white">Delete</a>
                               </td> 

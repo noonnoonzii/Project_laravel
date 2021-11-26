@@ -66,48 +66,38 @@
     </nav>
     <!-- End Navbar -->
     <div class="content">
-        <div class="card card-user">
-          <div class="card-header">
-            <h5 class="card-title text-danger">Add News</h5>
-            <a class="btn btn-primary btn-round" type="submit" href="{{route('news')}}">Back</a>
-          </div>
-      <form>
-          <div class="row">
-            <div class="col-3">
-              <img class="mr-3" src="../assets/img/logo.jpg" style="width: 50%;position: relative; " alt="Generic placeholder image">
-              <input type="file" class="form-control-file ml-3" id="exampleFormControlFile1">
-
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title text-danger">Add new product</h4>
+              <a href="{{ route('news') }}" class="btn btn-primary btn-round">Back</a>
             </div>
-
-            <div class="col-9">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Header News</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Content News</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-      
-                <button type="submit" class="btn btn-danger btn-round">Save</button>
-              </form>
-            </div>
-          </form>
-
-            </div>
-              <!-- <div class="media-body">
-                <label class="text-dark"><b>หัวข้อข่าวสาร</b></label>
-                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-
-                <label class="text-dark"><b>เนื้อหาข่าวใหม่</b></label>
-                <input type="text"  class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-              <div class="row">
-                <div class="update ml-auto mr-auto">
-                  <button type="submit" class="btn btn-danger btn-round">บันทึก</button>
-                </div>
+            <div class="card-body">
+              <div class="table">
+                <form action="{{route('create.news')}}" method="post" enctype="multipart/form-data">
+                  @csrf
+                  <div class="form-group">
+                    <label>Header News</label>
+                    <input type="text" name="name" class="form-control" placeholder="Header News">
+                  </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Content News</label>
+                        <input class="form-control" placeholder="Content New" name="text">
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <div class="custom-file">
+                          <input type="file" name="image" class="custom-file-input" id="image">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
+                   <button type="submit" class="btn btn-success btn-round">save</button>
+                </form>
               </div>
-        </div> -->
+            </div>
+          </div>
+        </div>
       </div>
-
-
-</div>
+    </div>

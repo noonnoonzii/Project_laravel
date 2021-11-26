@@ -1,5 +1,6 @@
 @extends('layouts.admin.admin')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="main-panel">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -71,43 +72,47 @@
             <h5 class="card-title text-danger">Edit News</h5>
             <a class="btn btn-primary btn-round" type="submit" href="{{route('news')}}">Back</a>
           </div>
-      <form>
-          <div class="row">
-            <div class="col-3">
-              <img class="mr-3" src="../assets/img/logo.jpg" style="width: 50%;position: relative; " alt="Generic placeholder image">
-              <input type="file" class="form-control-file ml-3" id="exampleFormControlFile1">
-
-            </div>
-
-            <div class="col-9">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Header News</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Content News</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-      
-                <button type="submit" class="btn btn-danger btn-round">Save</button>
-              </form>
-            </div>
-          </form>
-
-            </div>
-              <!-- <div class="media-body">
-                <label class="text-dark"><b>หัวข้อข่าวสาร</b></label>
-                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-
-                <label class="text-dark"><b>เนื้อหาข่าวใหม่</b></label>
-                <input type="text"  class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-              <div class="row">
-                <div class="update ml-auto mr-auto">
-                  <button type="submit" class="btn btn-danger btn-round">บันทึก</button>
+      <form action="{{url('/admin/news/update/'.$news->id_newinfo)}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="crad-body">
+          <div class="table">
+            <div class="row justify-content-start">
+              <div class="col-3 text-center">
+                <div class="table">
+                  <img src="{{asset('admin/asset/img/news/'.$news->image_new)}}" class="mb-4" id="showImage" alt="" style="width: 200px">
+                  <input type="file" name="image" class="form-control-file ml-3 text-center" id="image">
                 </div>
               </div>
-        </div> -->
-      </div>
 
-
+              <div class="col-9">
+                  <div class="form-group">
+                    <div class="table">
+                      <label for="exampleInputEmail1">Header News</label>
+                      <input type="text" name="head" class="form-control" id="exampleInputEmail1" value="{{$news->header_news}}">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="table">
+                      <label for="exampleInputPassword1">Content News</label>
+                      <input type="text" name="content" class="form-control" value="{{$news->content_news}}">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-danger btn-round">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#image').change(function(e){
+          var reader = new FileReader();
+          reader.onload = function(e){
+              $('#showImage').attr('src',e.target.result);
+          }
+          reader.readAsDataURL(e.target.files['0']);
+      });
+  });
+</script>

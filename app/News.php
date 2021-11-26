@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     protected $table ='news';
+    protected $primaryKey ='id_newinfo';
     protected $fillable =[
-        'news',
-        'image_news',
+        'header_news',
+        'content_news',
+        'image_new',
         'id_admin'
     ];
 }

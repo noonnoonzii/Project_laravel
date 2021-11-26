@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{url('main/css/templatemo.css')}}">
     <link rel="stylesheet" href="{{url('main/css/custom.css')}}">
 
-    <!-- Load fonts style after rendering the layout styles -->
+    <!-- Load fonts style after rendering the layout styles and icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="{{url('main/css/fontawesome.min.css')}}">
 
@@ -36,19 +37,19 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php">Home</a>
+                            <a class="nav-link text-white" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="shop.php">Shop</a>
+                            <a class="nav-link text-white" href="{{route('shop')}}">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="news.php">News</a>
+                            <a class="nav-link text-white" href="{{route('news')}}">News</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#tempaltemo_footer">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="about.php">About we</a>
+                            <a class="nav-link text-white" href="{{route('about')}}">About we</a>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +87,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>

@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       $data = type_product::first()->paginate(5);
+       $data = type_product::latest()->paginate(5);
         return view('admin.category.index', compact('data'));
                 
     }
@@ -91,8 +91,8 @@ class CategoryController extends Controller
         //]);
 
         $type = type_product::find($id_typeproduct);
-        $type->name = $request->typeproduct_name;
-        $type->save;
+        $type->typeproduct_name = $request->name;
+        $type->save();
 
         return redirect ('admin/category/index')
                         ->with('success','Category Updated succcessfully.');

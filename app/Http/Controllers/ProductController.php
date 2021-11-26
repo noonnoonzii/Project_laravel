@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
+use File;
 
 class ProductController extends Controller
 {
@@ -15,8 +18,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-       // $data = Product::first()->paginate();
-    return view('admin.product.index');
+        $data = Product::latest()->paginate(10);
+    return view('admin.product.index', compact('data'));
     }
 
     /**
@@ -37,7 +40,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        $product = new Product;
+        $product->name_product = $request->name;
+        $product->price = $request->price;
+        
+        
+        if ($request ->hasFile('image')) {
+            $filename = Str::random(11).'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'/admin/asset/img/product/',$filename);
+            Image::make(public_path().'/admin/asset/img/product/'.$filename);
+            $product->pic_product = $filename;
+        }else{
+            $product->pic_product = 'nopic.png';
+
+        }
+        $product->save();
+        return redirect('admin/product/index')
+                    ->with('success','Product Created successfully');
     }
 
     /**
@@ -57,9 +77,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_product)
     {
         //
+        $product = Product::find($id_product);
+        return view('admin/product/edit',compact('product'));
     }
 
     /**
@@ -69,9 +91,31 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_product)
     {
         //
+        
+        if ($request ->hasFile('image')) {
+            $product = Product::find($id_product);
+            if ($product->pic_product != 'nopic.png') {
+                File::delete(public_path().'admin/asset/img/product/'.$product->pic_product);
+            }
+            $filename = Str::random(11).'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'/admin/asset/img/product/',$filename);
+            Image::make(public_path().'/admin/asset/img/product/'.$filename);
+            $product->pic_product = $filename;
+            $product->name_product = $request->name;
+            $product->price = $request->price;
+        }else{
+            $product = Product::find($id_product);
+            $product->name_product = $request->name;
+            $product->price = $request->price;
+        }
+        $product->save();
+
+        return redirect('admin/product/index')
+                    ->with('success','Updated Prroduct successfully');
+
     }
 
     /**
@@ -80,8 +124,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_product)
     {
-        //
+        Product::destroy($id_product);
+           return redirect('admin/product/index')
+                ->with('success','Product Deleted successfully');
     }
 }

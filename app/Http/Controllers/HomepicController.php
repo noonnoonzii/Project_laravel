@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Home_pic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
+use File;
 
 class HomepicController extends Controller
 {
@@ -13,7 +17,8 @@ class HomepicController extends Controller
      */
     public function index()
     {
-        return view('admin/home_pic/index');
+        $data = Home_pic::latest()->paginate(3);
+        return view('admin/home_pic/index', compact('data'));
     }
 
     /**
@@ -21,9 +26,22 @@ class HomepicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $picture = new Home_pic;
+        if ($request->hasFile('image')){
+            $filename = Str::ramdom(10).'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'admin/asset/img/home_pic',$filename);
+            Image::make(public_path().'admin/asset/img/home_pic'.$filename);
+            $picture->image_homepic = $filename;
+        }else{
+            $picture->image_homepic = "nopic.png";
+        }
+        $picture->save();
+            return redirect('admin/home_pic')
+                    ->with('success','Created Picture homepage successfully');
+
     }
 
     /**
@@ -54,9 +72,25 @@ class HomepicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_homepic)
     {
         //
+        if ($request->hasFile('image')){
+            $picture = find::Home_pic($id_homepic);
+            if ($product->image_homepic != 'nopic.png') {
+                FIle::delete(public_path().'admin/asset/img/home_pic/'.$picture->image_homepic);
+            }
+            $filename = Str::ramdom(10).'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'admin/asset/img/home_pic',$filename);
+            Image::make(public_path().'admin/asset/img/home_pic'.$filename);
+            $picture->image_homepic = $filename;
+        }else{
+            $picture->image_homepic = "nopic.png";
+        }
+        $picture->save();
+            return redirect('admin/home_pic')
+                    ->with('success','Created Picture homepage successfully');
+
     }
 
     /**
@@ -77,8 +111,11 @@ class HomepicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_homepic)
     {
         //
+        Home_pic::destroy($id_homepic);
+            return redirect('admin/home_pic/index')
+                    ->with('success','Deleted picture successfuly');
     }
 }

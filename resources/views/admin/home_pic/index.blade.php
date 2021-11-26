@@ -1,5 +1,6 @@
 @extends('layouts.admin.admin')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="main-panel">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -73,19 +74,28 @@
               <h4 class="card-title text-danger"> Change Picture Slide </h4>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
+              <form action="{{route('create.homepic')}}" method="POST" enctype="multipart/form-data">
+                 <div class="table">
                 <div class="container">
                   <div class="row">
-                    <div class="col-sm">
-                      <img src="../assets/img/park.jpg">
-                    </div>
-                    <div class="col-sm">
-                      <img src="../assets/img/damir-bosnjak.jpg">
-                    </div>
-                    <div class="col-sm">
-                      <img src="../assets/img/jan-sendereks.jpg">
-                    </div>
+                    <!--Start Edit-->
+                          <div class="col text-center">
+                              <img id="showImage" src="{{asset('admin/asset/img/')}}" style="width: 100px" class="rounded mx-auto d-blockcenter">
+                          </div>
                   </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                            <div class="input-group">
+                              <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input btn btn-round btn-warning text-white" id="image">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                              </div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+
                   <div class="card-body">
                     <div class="row text-center">
                       <div class="update ml-auto mr-auto">
@@ -93,88 +103,80 @@
                       </div>
                     </div>
                 </div>
+                  <!--end Edit-->
+
+                  <!--Start Show-->
                 <div class="content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Manage Picture</h4>
-            </div>
-            <div class="card-body">
-              <div class="table">
-                <table class="table">
-                  <thead class=" text-primary">
-                    <th>
-                      Name
-                    </th>
-                    <th>
-                      Create_at
-                    </th>
-                    <th>
-                      Update_at
-                    </th>
-                    <th class="text-center">
-                      Edit
-                    </th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        park.jpg
-                      </td>
-                      <td>
-                        
-                      </td>
-                      <td>
-                      
-                      </td>
-                      <td class="text-center">
-                        <input type="file" class="custom-file-upload btn-round btn btn-warning text-white" id="exampleFormControlFile1">
-                        <button type="submit" class="btn btn-danger btn-round">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      damir-bosnjak.jpg
-                      </td>
-                      <td>
-                        
-                      </td>
-                      <td>
-                        
-                      </td>
-                      <td class="text-center">
-                        <input type="file" class="custom-file-upload btn-round btn btn-warning text-white" id="exampleFormControlFile1">
-                        <button type="submit" class="btn btn-danger btn-round">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      jan-sendereks.jpg
-                      </td>
-                      <td>
-                        
-                      </td>
-                      <td>
-                        
-                      </td>
-                      <td class="text-center">
-                        <input type="file" class="custom-file-upload btn-round btn btn-warning text-white" id="exampleFormControlFile1">
-                        <button type="submit" class="btn btn-danger btn-round">Delete</button>
-                    </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  <div div class="row">
+                    <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <h4 class="card-title">Manage Picture</h4>
+                        </div>
+                        <div class="card-body">
+                          <div class="table">
+                            <table class="table">
+                              <thead class=" text-primary">
+                                <th>
+                                  Name
+                                </th>
+                                <th>
+                                  Created_at
+                                </th>
+                                <th>
+                                  Updated_at
+                                </th>
+                                <th class="text-center">
+                                  Delete
+                                </th>
+                              </thead>
+                              <tbody>
+                                @foreach ($data as $key => $homepic)
+                                    <tr>
+                                  <td>
+                                    {{$homepic->image_homepic}}
+                                  </td>
+                                  <td>
+                                    {{$homepic->created_at}}
+                                  </td>
+                                  <td>
+                                    {{$homepic->updated_at}}
+                                  </td>
+                                  <td class="text-center">
+                                    <input type="file" class="custom-file-upload btn-round btn btn-warning text-white" id="exampleFormControlFile1">
+                                    <button type="submit" class="btn btn-danger btn-round">Delete</button>
+                                  </td>
+                                </tr> 
+                                @endforeach
+                                  
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      <!--End show-->
+                  </div>
               </div>
             </div>
-          </div>
-        </div>
-                </div>
-              </div>
+            </div>
+              </form> 
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#image').change(function(e){
+              var reader = new FileReader();
+              reader.onload = function(e){
+                  $('#showImage').attr('src',e.target.result);
+              }
+              reader.readAsDataURL(e.target.files['0']);
+          });
+      });
+  </script>
+    
+    
+    

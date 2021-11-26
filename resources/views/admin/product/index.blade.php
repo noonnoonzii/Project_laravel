@@ -1,5 +1,6 @@
 @extends('layouts.admin.admin')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="main-panel">
 <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -94,7 +95,13 @@
                             No.
                         </th>
                         <th>
-                          Category Name
+                          Product Name
+                        </th>
+                        <th>
+                          Image Product
+                        </th>
+                        <th>
+                          Price
                         </th>
                         <th>
                           Create_at
@@ -106,19 +113,26 @@
                           action
                         </th>
                       </thead>
+                      @foreach ($data as $key =>$product)
                             <tr>
-                              <td>#</td>
-                              <td>#</td>
-                              <td>#</td>
-                              <td>#</td>
+                              <td>{{ $product->id_product }}</td>
+                              <td>{{ $product->name_product }}</td>
                               <td>
-                               <form action='' method="post">
-                                  <a href="{{ url('admin/product/edit/') }}" class="btn btn-warning btn-round">Edit</a>
+                                <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" alt="" style="width: 100px">
+                              </td>
+                              <td>{{ $product->price }}</td>
+                              <td>{{ $product->created_at}}</td>
+                              <td>{{ $product->updated_at}}</td>
+                              <td>
+                               <form action='{{url('admin/product/index','$product->id_product')}}' method="post">
+                                  <a href="{{ url('admin/product/edit/'.$product->id_product) }}" class="btn btn-warning btn-round">Edit</a>
                                   {{csrf_field()}}
                                   
-                                  <a href="{{url('/admin/product/delete/')}}" class="btn btn-danger btn-round text-white">Delete</a>
+                                  <a href="{{url('/admin/product/delete/'.$product->id_product)}}" class="btn btn-danger btn-round text-white">Delete</a>
                               </td> 
                             </tr>
+                      @endforeach
+                  
 
 
                     </table>
@@ -128,4 +142,5 @@
             </div>
           </div>
       </div>
+      
     {{-- End Manage Category --}}

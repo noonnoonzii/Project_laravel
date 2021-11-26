@@ -64,42 +64,45 @@
                 </div>
               </div>
             </nav>
-
+            <!--End nav bar -->
             <div class="content">
-                <div class="card card-user">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
                     <div class="card-header">
-                    <h5 class="card-title text-danger">Edit product</h5>
+                      <h4 class="card-title text-danger">Add new product</h4>
+                      <a href="{{ route('product') }}" class="btn btn-primary btn-round">Back</a>
                     </div>
-                    <div class="contriner">
-                        <div class="row">
-                            <div class="col-lg-3 text-center">
-                                <img class="mr-3" src="#" style="width: 90px;position: relative; " alt="Generic placeholder image">
-                                <input type="file" class="form-control-file ml-3" id="exampleFormControlFile1">
-            
+                    <div class="card-body">
+                      <div class="table">
+                        <form action="{{route('create.product')}}" method="post" enctype="multipart/form-data">
+                          @csrf
+                          <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Product name">
+                          </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Category</label>
+                                <input type="select" class="form-control" placeholder="Select Category" name="cetegory">
                             </div>
-                            <div class="col-lg-9">
-                                <div class="col-md-3 px-1">
-                                    <div class="form-group">
-                                        <label>Product Name</label>
-                                        <input type="text" class="form-control" placeholder="" value="">
-                                    </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Price</label>
+                                <input type="text" name="price" class="form-control" placeholder="price" mane="price">
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group mb-3">
+                                <div class="custom-file">
+                                  <input type="file" name="image" class="custom-file-input" id="image">
+                                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
-                                    <div class="col-md-4 pl-1">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Category</label>
-                                            <input type="email" class="form-control" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pl-1">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Price</label>
-                                            <input type="email" class="form-control" placeholder="">
-                                        </div>
-                                            <button type="submit" class="btn btn-danger btn-round">Save</button>
-                                    </div>
+                              </div>
                             </div>
-                        </div>
+                           <button type="submit" class="btn btn-success btn-round">save</button>
+                        </form>
+                      </div>
                     </div>
-                </div>    
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+        

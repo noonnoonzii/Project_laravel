@@ -1,4 +1,4 @@
-@extends('latouts.main.index')
+@extends('layouts.main.index')
 
 @section('content')
     <!-- Start Side Bar -->
