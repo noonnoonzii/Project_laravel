@@ -41,7 +41,7 @@ Route::get('/admin/product/delete/{id}','ProductController@destroy');
 
 
     //admin-->News
-Route::get('/admin/news/index', 'NewsController@index')->name('news');
+Route::get('/admin/news/index', 'NewsController@index');
 Route::get('/admin/news/create','NewsController@create');
 Route::post('/admin/news/create','NewsController@store')->name('create.news');
 Route::get('/admin/news/edit/{id}','NewsController@edit');

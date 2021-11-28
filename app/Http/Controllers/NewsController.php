@@ -54,7 +54,7 @@ class NewsController extends Controller
             $news->image_new = 'nopic.png';
         }
         $news->save();
-        return redirect()->route('news')
+        return redirect('admin/news/index/')
                         ->with('success','Created News successfully');
     }
 

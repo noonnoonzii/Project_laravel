@@ -70,7 +70,7 @@
         <div class="card card-user">
           <div class="card-header">
             <h5 class="card-title text-danger">Edit News</h5>
-            <a class="btn btn-primary btn-round" type="submit" href="{{route('news')}}">Back</a>
+            <a class="btn btn-primary btn-round" type="submit" href="{{url('admin/news/index')}}">Back</a>
           </div>
       <form action="{{url('/admin/news/update/'.$news->id_newinfo)}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -94,7 +94,7 @@
                   <div class="form-group">
                     <div class="table">
                       <label for="exampleInputPassword1">Content News</label>
-                      <input type="text" name="content" class="form-control" value="{{$news->content_news}}">
+                      <textarea type="text" name="content" class="form-control textarea">{{$news->content_news}}</textarea>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-danger btn-round">Save</button>

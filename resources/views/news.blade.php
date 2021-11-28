@@ -1,6 +1,5 @@
-@extends('layouts.main.index');
-@section('content');
-
+@extends('layouts.main.index')
+@section('content')
 <section class="bg-light">
     <div class="container py-5">
         <div class="row py-3">

@@ -71,7 +71,7 @@
           <div class="card">
             <div class="card-header">
               <h4 class="card-title text-danger">Add new product</h4>
-              <a href="{{ route('news') }}" class="btn btn-primary btn-round">Back</a>
+              <a href="{{ url('admin/news/index') }}" class="btn btn-primary btn-round">Back</a>
             </div>
             <div class="card-body">
               <div class="table">
@@ -83,7 +83,7 @@
                   </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Content News</label>
-                        <input class="form-control" placeholder="Content New" name="text">
+                        <textarea type="text" name="text" class="form-control textarea">Content News</textarea>
                     </div>
                     <div class="form-group">
                       <div class="input-group mb-3">

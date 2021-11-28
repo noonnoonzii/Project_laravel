@@ -53,7 +53,7 @@ Coded by www.creative-tim.com
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          @if(Auth::user()->check());
+          @if(Auth::user()->check())
           <li class="active ">
             <a href="{{url('/admin/index')}}">
               <i class="nc-icon nc-bank"></i>
@@ -63,17 +63,17 @@ Coded by www.creative-tim.com
           <li>
             <a href="{{route('home_pic')}}">
               <i class="nc-icon nc-diamond"></i>
-              <p>Change Home Picture</p>
+              <p>Home Picture</p>
             </a>
           </li>
           <li>
-            <a href={{Route('product')}}>
+            <a href="{{Route('product')}}">
               <i class="nc-icon nc-pin-3"></i>
               <p>Product</p>
             </a>
           </li>
           <li>
-            <a href="{{route('news')}}">
+            <a href="{{url('admin/news/index/')}}">
               <i class="nc-icon nc-single-02"></i>
               <p>News</p>
             </a>
@@ -89,7 +89,7 @@ Coded by www.creative-tim.com
           <li>
             <a href="{{route('users')}}">
                 <i class="nc-icon nc-single-02"></i>
-                <p>Profile</p>
+                <p class="text-Black">{{ Auth::user()->name }}</p>
             </a>
           </li>
         </ul>
