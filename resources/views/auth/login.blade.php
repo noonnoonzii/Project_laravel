@@ -21,7 +21,7 @@
 	              <input name="password" type="password" class="form-control text-center" placeholder="Password" required>
 	            </div>
 	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-dark rounded submit px-3" href="{{route('home')}}">Login</button>
+	            	<button type="submit" class="form-control btn btn-black rounded  px-3" href="{{route('home')}}">Login</button>
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
@@ -38,7 +38,7 @@
 	          </form>
 			  <div class="form-group row mb-0">
 				  <div class="col md-6">
-				 <a class="form-control btn btn-dark rounded submit px-3" type="submit" href="{{route('register')}}">Register</a>
+				 <button class="form-control btn btn-black rounded submit px-3" type="submit" href="{{route('register')}}">Register</button>
 			</div>
 	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
 	          <div class="social d-flex text-center">

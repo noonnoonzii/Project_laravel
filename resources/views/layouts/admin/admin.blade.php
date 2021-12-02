@@ -31,7 +31,7 @@ Coded by www.creative-tim.com
   <link href="{{url('admin/asset/css/bootstrap.min.css')}}" rel="stylesheet" />
   <link href="{{url('admin/asset/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{url('admin/asset/demo/demo.css')}}" rel="stylesheet" />
+  <link href='admin/asset/demo/demo.css' rel="stylesheet" />
 </head>
 
 <body>
@@ -87,7 +87,7 @@ Coded by www.creative-tim.com
           @endif
 
           <li>
-            <a href="{{route('users')}}">
+            <a href="{{route('users',[ Auth::user()->id ])}}">
                 <i class="nc-icon nc-single-02"></i>
                 <p class="text-Black">{{ Auth::user()->name }}</p>
             </a>
@@ -110,7 +110,7 @@ Coded by www.creative-tim.com
 <script src="{{asset('admin/admin/js/plugins/bootstrap-notify.js')}}"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="{{asset('admin/asset/js/paper-dashboard.min.js?v=2.0.1')}}" type="text/javascript"></script> <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="{{asset('admin/asset/demo/demo.js')}}"></script>
+<script src='admin/asset/demo/demo.js'></script>
 </body>
 
 </html>

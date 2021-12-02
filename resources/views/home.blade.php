@@ -3,8 +3,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('My Proflie') }}</div>
+            <div class="card mt-8">
+                <div class="card-header">
+                    <h2>
+                        {{ __('My Proflie') }}<br>
+                    </h2>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -25,7 +29,7 @@
                     
                     
                     <a href="/" class="btn btn-success">Home</a>
-                    <a href="{{route('users')}}" class="btn btn-warning text-white">Edit</a>
+                    <a href="{{route('users',[ Auth::user()->id ])}}" class="btn btn-warning text-white">Edit</a>
                 </div>
             </div>
         </div>

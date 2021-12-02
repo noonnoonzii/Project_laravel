@@ -78,10 +78,14 @@
               <div class="author">
                 <a href="#">
                   <img class="avatar border-gray" src="../../../assets/img/logo.jpg" alt="">
-                  <h5 class="title">hi_ttokdi</h5>
+                  <h5 class="title">
+                    {{ Auth::user()->name }}
+                    {{ Auth::user()->lastname }}
+                  
+                  </h5>
                 </a>
                 <p class="description">
-                  @noonnoonzii
+                 @.{{ Auth::user()->username }}
                 </p>
               </div>
               <p class="description text-center">
@@ -95,23 +99,53 @@
         <div class="col-md-8">
           <div class="card card-user">
             <div class="card-header">
-              <h5 class="card-title">Edit Profile</h5>
+              <h3 class="card-title text-danger">Edit Profile</h3>
             </div>
             <div class="card-body">
              <!-- foreach ($data as $key => $users)
                   <form action="url('/admin/users/update')">
                 csrf-->
                 <div class="row">
+                    <div class="image">
+                      <img src="{{asset('admin/asset/img/park.jpg')}}" alt="...">
+                    </div>
+                    <div class="card-body">
+                      <div class="author">
+                        <a href="#">
+                          <img class="avatar border-gray" src="{{asset('admin/asset/img/logo.jpg')}}" alt="">
+                          <h5 class="title">
+                            {{ Auth::user()->name }}
+                            {{ Auth::user()->lastname }}
+                          
+                          </h5>
+                        </a>
+                        <p class="description">
+                         @.{{ Auth::user()->username }}
+                        </p>
+                      </div>
+                      <p class="description text-center">
+                        "That our Queendom"  <br>
+                        
+                      </p>
+                    </div>
+                </div>
+                <div class="row">
                   <div class="col-md-3 pr-1">
                     <div class="form-group">
                       <label>Username</label>
-                      <input type="text" name="username" class="form-control"   value=""/>
+                      <input type="text" name="username" class="form-control"   value="{{ Auth::user()->username }}"/>
                     </div>
                   </div>
                   <div class="col-md-4 pr-1">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" name="email" class="form-control" placeholder="Email" value="">
+                      <input type="email" name="email" class="form-control" placeholder="Email" value="{{ Auth::user()->email }}">
+                    </div>
+                  </div>
+                  <div class="col-md-4 pr-1">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Phone</label>
+                      <input type="text" name="phone" class="form-control" placeholder="Phone" value="{{ Auth::user()->phone }}">
                     </div>
                   </div>
                 </div>
@@ -119,13 +153,13 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>First Name</label>
-                      <input type="text" name="name" class="form-control" placeholder="First Name" value="">
+                      <input type="text" name="name" class="form-control" placeholder="First Name" value="{{ Auth::user()->name }}">
                     </div>
                   </div>
                   <div class="col-md-6 ">
                     <div class="form-group">
                       <label>Last Name</label>
-                      <input type="text" name="lname" class="form-control" placeholder="Last Name" value="">
+                      <input type="text" name="lname" class="form-control" placeholder="Last Name" value="{{ Auth::user()->lastname }}">
                     </div>
                   </div>
                 </div>
@@ -133,7 +167,7 @@
                   <div class="col-md-12 ">
                     <div class="form-group">
                       <label>Address</label>
-                      <textarea type="text" name="address" class="form-control textarea" placeholder="Home Address" value=""></textarea>
+                      <textarea type="text" name="address" class="form-control textarea" placeholder="Address">{{ Auth::user()->address }}</textarea>
                     </div>
                   </div>
                 </div>
@@ -152,7 +186,6 @@
                 </div>
                 </div>
               </form>
-              <!--endforeach-->
               
             </div>
           </div>

@@ -49,7 +49,7 @@ Route::post('/admin/news/update/{id}','NewsController@update');
 Route::get('/admin/news/delete/{id}','NewsController@destroy');
 
     //admin-->Users
-Route::get('/admin/users/index', 'UsersController@index')->name('users');
+Route::get('/admin/users/index/{id}', 'UsersController@index')->name('users');
 Route::post('/admin/users/update/{id}','usersController@update');
 
 
