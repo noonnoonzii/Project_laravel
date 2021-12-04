@@ -31,41 +31,11 @@
                                                 </span>
                                             @enderror
                                     </div>
-
-                                    <div class="form-group">
-                                            <input id="lastname" type="text" class="form-control text-center @error('lastname') is-invalid @enderror" placeholder="Lastname" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
-
-                                            @error('lastname')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                    </div>
-
-                                    <div class="form-group">
-                                            <input id="phone" type="text" class="form-control text-center @error('phone') is-invalid @enderror" placeholder="Phone" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-
-                                            @error('phone')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                    </div>
-
+                                    
                                     <div class="form-group">
                                             <input id="email" type="email" class="form-control text-center @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                             @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                    </div>
-
-                                    <div class="form-group">
-                                            <input id="address" type="text" class="form-control text-center @error('address') is-invalid @enderror" placeholder="Address" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
-
-                                            @error('address')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

@@ -1,0 +1,105 @@
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 10px -4px rgb(0 0 0 / 15%);
+    color: #252422;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    position: relative;
+    transition: 300ms;
+
+    
+}
+.card-user .image{
+    height: 140px;
+}
+.card .image{
+    overflow: hidden;
+    height: 200;
+    position: relative;
+}
+.card-user .avatar{
+    width: 124px;
+    height: 124px;
+    border: 1px solid #ffffff;
+    position: relative;
+}
+.image-user .avatar{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ffffff;
+    position: relative;
+}
+.card .avatar{
+    width: 177px;
+    height: 177px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+.card-user .author{
+    text-align: center;
+    text-transform: none;
+    margin-top: -100px;
+}
+.card-user .right{
+    text-align: right;
+    text-transform: none;
+    margin-top: -100px;
+}
+img, svg{
+    max-width: 100%;
+    border-radius: 3px;
+}
+b{
+    color: red;
+}
+.underline{
+    text-decoration: underline;
+}
+.icon-size{
+    height: 20px;
+    width: 20px;
+}
+.edit-button{
+    margin-top: 1px;
+    margin-bottom: -2rem;
+    text-align: right;
+}
+.edit-button .btn{
+    border-radius: 24px;
+}
+.close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.card-model {
+    border-radius: 12px;
+    transform: translate(-50%, -50%) scale(0);
+    box-shadow: 0 6px 10px -4px rgb(0 0 0 / 15%);
+    color: #252422;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    position: relative;
+    transition: 300ms;
+}
+.card-model .active{
+    transform: translate(-50%, -50%) scale(0);
+}
+#overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, .5);
+}
+.edit-username{
+    margin-top: -20px;
+}
+.edit-label{
+    text-align: left;
+}

@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       $data = type_product::latest()->paginate(5);
+       $data = type_product::first()->paginate(5);
         return view('admin.category.index', compact('data'));
                 
     }

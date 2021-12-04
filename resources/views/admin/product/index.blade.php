@@ -101,6 +101,9 @@
                           Image Product
                         </th>
                         <th>
+                          Category
+                        </th>
+                        <th>
                           Price
                         </th>
                         <th>
@@ -120,6 +123,7 @@
                               <td>
                                 <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" alt="" style="width: 100px">
                               </td>
+                              <td>{{ $product->category->typeproduct_name }}</td>
                               <td>{{ $product->price }}</td>
                               <td>{{ $product->created_at}}</td>
                               <td>{{ $product->updated_at}}</td>

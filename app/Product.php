@@ -15,4 +15,8 @@ class Product extends Model
         'id_admin',
         'id_typeproduct'
     ];
+
+    public function category(){
+        return $this->belongsTo(type_product::class,'id_typeproduct');
+    }
 }

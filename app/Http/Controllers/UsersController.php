@@ -82,7 +82,8 @@ class UsersController extends Controller
         $users->phone = $request->phone;
         $users->email = $request->email;
         $users->address = $request->address;
-
+        $users->save();
+        return redirect()->route('home');
     }
 
     /**

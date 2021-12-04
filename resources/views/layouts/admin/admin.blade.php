@@ -86,12 +86,12 @@ Coded by www.creative-tim.com
           </li>
           @endif
 
-          <li>
+          {{-- <li>
             <a href="{{route('users',[ Auth::user()->id ])}}">
                 <i class="nc-icon nc-single-02"></i>
                 <p class="text-Black">{{ Auth::user()->name }}</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>

@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{{url('main/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('main/css/templatemo.css')}}">
+    <link rel="stylesheet" href="{{url('main/css/custom.css')}}">
 
 
 

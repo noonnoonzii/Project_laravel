@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\type_product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Image;
@@ -29,7 +30,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('admin.product.create');
+        $category = type_product::all();
+        return view ('admin.product.create', compact('category'));
     }
 
     /**
@@ -44,6 +46,7 @@ class ProductController extends Controller
         $product = new Product;
         $product->name_product = $request->name;
         $product->price = $request->price;
+        $product->id_typeproduct = $request->category;
         
         
         if ($request ->hasFile('image')) {
@@ -81,7 +84,8 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id_product);
-        return view('admin/product/edit',compact('product'));
+        return view('admin/product/edit',compact('product'))
+                    ->with('category',type_product::all());
     }
 
     /**
@@ -106,10 +110,12 @@ class ProductController extends Controller
             $product->pic_product = $filename;
             $product->name_product = $request->name;
             $product->price = $request->price;
+            $product->id_typeproduct = $request->category;
         }else{
             $product = Product::find($id_product);
             $product->name_product = $request->name;
             $product->price = $request->price;
+            $product->id_typeproduct = $request->category;
         }
         $product->save();
 

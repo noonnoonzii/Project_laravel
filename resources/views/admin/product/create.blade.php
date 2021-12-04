@@ -83,7 +83,15 @@
                           </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category</label>
-                                <input type="select" class="form-control" placeholder="Select Category" name="cetegory">
+                                <select class="custom-select" name="category">
+                                  <option selected>Open this select Category</option>
+                                  @foreach ($category as $categories)
+                                      <option value="{{$categories->id_typeproduct}}">
+                                        {{$categories->typeproduct_name}}
+                                      </option>
+                                  @endforeach
+                                  
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Price</label>
