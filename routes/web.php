@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'WelcomeController@welcome')->name('welcome');
+
     //admin
 route::get('/admin/index','AdminController@index')->name('index');
 

@@ -60,12 +60,12 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="{{route('home_pic')}}">
               <i class="nc-icon nc-diamond"></i>
               <p>Home Picture</p>
             </a>
-          </li>
+          </li> --}}
           <li>
             <a href="{{Route('product')}}">
               <i class="nc-icon nc-pin-3"></i>

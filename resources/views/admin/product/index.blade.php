@@ -116,7 +116,7 @@
                           action
                         </th>
                       </thead>
-                      @foreach ($data as $key =>$product)
+                      @foreach ($data as $product)
                             <tr>
                               <td>{{ $product->id_product }}</td>
                               <td>{{ $product->name_product }}</td>

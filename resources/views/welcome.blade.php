@@ -255,47 +255,23 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($news as $news)
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
-                            <img src="./main/img/new/new1.jpg" class="card-img-top" alt="...">
+                        
+
+                            {{-- <a href="shop-single.html"> --}}
+                            <img src="{{asset('admin/asset/img/news/'.$news->image_new)}}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body bg-white">                        
-                            <p href="shop-single.html" class="h2 text-decoration-none text-black">Discount All Product 10%</p>
+                            <p href="shop-single.html" class="h2 text-decoration-none text-black">{{$news->header_news}}</p>
                             <p class="card-text text-black">
-                                Happy go skateborad day We would like to give Promotion 10% discount on all products sold everywhere in online stores and stores.
-                            <p class="text-muted">Reviews (24)</p>
+                                {{$news->content_news}}
+                            <p class="text-muted">{{$news->created_at}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="shop-single.html">
-                            <img src="./main/img/new/new2.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body bg-white">
-                            <p href="shop-single.html" class="h2 text-decoration-none text-black">Special offer for lockdown</p>
-                            <p class="card-text text-black">
-                                Dreg Skate shop offers a Promotion 10% Discount on all Product sold for Lockdown.
-                            </p>
-                            <p class="text-muted">Reviews (52)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="shop-single.html">
-                            <img src="./main/img/new/new3.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body bg-white">
-                            <p href="shop-single.html" class="h2 text-decoration-none text-black">Sign up for free, Get a DG Blackcard</p>
-                            <p class="card-text text-black">
-                                Sing up for free, get a DG Blackcard jusy by Scanning the QR code, Every 100 Baht equal to 1 Point, 100 Point equal to 200 Baht.
-                            </p>
-                            <p class="text-muted">Reviews (74)</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
