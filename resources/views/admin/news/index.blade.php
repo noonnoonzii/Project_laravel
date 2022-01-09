@@ -132,8 +132,12 @@
                               </td> 
                             </tr>
                       @endforeach
-                            
                     </table>
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          {{ $data->links() }}
+                        </ul>
+                      </nav>
                   </div>
                 </div>
               </div>
