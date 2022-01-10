@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\News;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Image;
 use File;
@@ -65,9 +64,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-
+        //
     }
 
     /**

@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//main web
 Route::get('/', 'WelcomeController@welcome')->name('welcome');
-
 
     //admin
 route::get('/admin/index','AdminController@index')->name('index');
@@ -65,9 +63,9 @@ Route::get('/admin/home_pic/delete','HomepicController@destroy');
     //MainWeb
 Auth::routes();
 
-Route::get('/shop','Welcomecontroller@shop')->name('shop');
-Route::get('/home', 'WelcomeController@index')->name('home');
-Route::get('/news','WelcomeController@news')->name('news');
-Route::get('/about','WelcomeController@about')->name('about');
+Route::get('/shop','Homecontroller@shop')->name('shop');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/news','HomeController@news')->name('news');
+Route::get('/about','HomeController@about')->name('about');
 
 

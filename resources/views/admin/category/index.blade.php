@@ -93,6 +93,9 @@
                     <table class="table">
                       <thead class="text-primary">
                         <th>
+                            No.
+                        </th>
+                        <th>
                           Category Name
                         </th>
                         <th>
@@ -108,6 +111,7 @@
                       
                         @foreach ($data as $key => $category_id)
                             <tr>
+                              <td>{{ $category_id->id_typeproduct }}</td>
                               <td>{{ $category_id->typeproduct_name }}</td>
                               <td>{{ $category_id->created_at }}</td>
                               <td>{{ $category_id->updated_at }}</td>
@@ -120,19 +124,14 @@
                               </td> 
                             </tr>
                         @endforeach
+
                     </table>
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination">
-                        {{ $data->links() }}
-                      </ul>
-                    </nav>
                   </div>
                 </div>
               </div>
             </div>
           </div>
       </div>
-      
     {{-- End Manage Category --}}
 
 
