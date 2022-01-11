@@ -61,19 +61,19 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="{{url('/main/img/product_1.jpg')}}" class="rounded-circle img-fluid border"></a>
+                <a><img src="{{url('/main/img/product_1.jpg')}}" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3 text-white">Skate</h5>
-                <p class="text-center"><a class="btn btn-danger">Go Shop</a></p>
+                <p class="text-center"><a class="btn btn-danger" href="{{url('/product/category/'.$category=7)}}">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="{{url('/main/img/product/Safety/safe_1.jpg')}}" class="rounded-circle img-fluid border"></a>
+                <a><img src="{{url('/main/img/product/Safety/safe_1.jpg')}}" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3 text-white">Safety</h2>
-                <p class="text-center"><a class="btn btn-danger">Go Shop</a></p>
+                <p class="text-center"><a class="btn btn-danger" href="{{url('/product/category/'.$category=15)}}">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="{{url('/main/img/product/fashion/shirt/shirt_1.jpg')}}" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3 text-white">Fashion</h2>
-                <p class="text-center"><a class="btn btn-danger">Go Shop</a></p>
+                <a><img src="{{url('/main/img/product/fashion/shirt/shirt_1.jpg')}}" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3 text-white">Shirts</h2>
+                <p class="text-center"><a class="btn btn-danger" href="{{url('/product/category/'.$category=6)}}">Go Shop</a></p>
             </div>
         </div>
     </div>

@@ -64,8 +64,10 @@ Route::get('/admin/home_pic/delete','HomepicController@destroy');
 
     //MainWeb
 Auth::routes();
-
+    //ShopCategory
+Route::get('/product/category/{id}','WelcomeController@findCategory');
 Route::get('/shop','Welcomecontroller@shop')->name('shop');
+
 Route::get('/home', 'WelcomeController@index')->name('home');
 Route::get('/news','WelcomeController@news')->name('news');
 Route::get('/about','WelcomeController@about')->name('about');
