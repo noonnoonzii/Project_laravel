@@ -31,7 +31,7 @@
                   Dreg Skateshop
             </h>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:26px;"></i></span>
             </button>
 
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
@@ -112,14 +112,12 @@
                 </form>
             </div>
         </div>
-    <div class="container">
         @yield('content')
-    </div>
     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4 pt-5">
+                <div class="col-md-6 pt-5">
                     <h2 class="h2 text-danger border-bottom pb-3 border-light logo">Dreg Skate Shop</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <u class="h3 text-light" name="contact">Contact</u>
@@ -141,29 +139,19 @@
                     </ul>
                 </div>
 
-                <div class="col-md-4 pt-5">
+                <div class="col-md-6 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Deck</a></li>
-                        <li><a class="text-decoration-none" href="#">Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">T-Shirts</a></li>
-                        <li><a class="text-decoration-none" href="#">Complete-Skateboards</a></li>
-                        <li><a class="text-decoration-none" href="#">Trucks</a></li>
-                        <li><a class="text-decoration-none" href="#">Wheels</a></li>
-                        <li><a class="text-decoration-none" href="#">Grip Tape</a></li>
-                        <li><a class="text-decoration-none" href="#">Hardware</a></li>
-                        <li><a class="text-decoration-none" href="#">Accessories</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=8)}}">Deck</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=14)}}">Shoes</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=6)}}">T-Shirts</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=7)}}">Complete-Skateboards</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=9)}}">Trucks</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=10)}}">Wheels</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=11)}}">Grip Tape</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=12)}}">Hardware</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=13)}}">Accessories</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=15)}}">Safety</a></li>
                     </ul>
                 </div>
 
@@ -187,7 +175,7 @@
                     <label class="sr-only" for="subscribeEmail">Email address</label>
                     <div class="input-group mb-2">
                         <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-danger text-light">Subscribe</div>
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
                     </div>
                 </div>
             </div>

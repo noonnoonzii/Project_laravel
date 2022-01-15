@@ -10,9 +10,10 @@ use Illuminate\Http\Request;
 class WelcomeController extends Controller
 {
     //
-    public function welcome(){    
+    public function welcome(){
+        $hot = Product::latest()->paginate(3);    
         $news = News::latest()->paginate(3);
-        return view('welcome',compact('news'));
+        return view('welcome',compact('news','hot'));
     }
     public function linkcategory($id_typeproduct){
         $category = type_product::all($id_typeproduct);
@@ -25,7 +26,7 @@ class WelcomeController extends Controller
     }
     public function shop(){
         $category = type_product::all();
-        $product = Product::all();
+        $product = Product::latest()->paginate(9);
         $shirt = Product::where('id_typeproduct','=',6)->get();
         $bearing = Product::where('id_typeproduct','=',2)->get();
         $tape = Product::where('id_typeproduct','=',3)->get();
@@ -41,6 +42,12 @@ class WelcomeController extends Controller
         return view('shop',
             compact('category','product','shirt','bearing','tape','CPskate','shoes',
                     'deck','truck','wheels','gripTape','hardware','accessories','safety'));
+    }
+    public function singleShop($id_product){
+
+        $single = Product::find($id_product);
+        return view ('shop-single',compact('single'));
+
     }
     public function findCategory($id_typeproduct){
         $findCategory = type_product::find($id_typeproduct);

@@ -120,7 +120,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4 pt-5">
+                <div class="col-md-6 pt-5">
                     <h2 class="h2 text-danger border-bottom pb-3 border-light logo">Dreg Skate Shop</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <u class="h3 text-light" name="contact">Contact</u>
@@ -142,7 +142,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-4 pt-5">
+                <div class="col-md-6 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Deck</a></li>
@@ -157,16 +157,6 @@
                     </ul>
                 </div>
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
-                    </ul>
-                </div>
 
             </div>
 
@@ -188,7 +178,7 @@
                     <label class="sr-only" for="subscribeEmail">Email address</label>
                     <div class="input-group mb-2">
                         <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-danger text-light">Subscribe</div>
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
                     </div>
                 </div>
             </div>

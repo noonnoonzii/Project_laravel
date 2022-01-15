@@ -81,94 +81,46 @@
     <!-- End Categories of The Month -->
 
     <!-- Start Product New -->
-    <section class="bg-light">
-        <div class="container py-5">
-            <div class="row py-3">
-                <div class="col-lg-6 ">
-                    <h1 class="h1 text-danger"><b>New Product</b></h1>
+        <!-- Start Article -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-left p-2 pb-3">
+                    <h1 class="text-danger">New Product</h1>
+                </div>
+                <!--Start Carousel Wrapper-->
+                <div class="row">
+                    @foreach ($hot as $product)
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="shop-single.html">
+                                <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">{{$product->name_product}}</a>
+                                <p class="card-text">
+                                {{$product->description}}
+                                </p>
+                                <ul class="list-unstyled d-flex justify-content-between">
+                                    <li class="text-muted text-right">Price {{ $product->price }} bath.</li>
+                                </ul>
+                                <p class="text-muted">{{$product->updated_at}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="row">
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <a href="#">
-                            <img src="./main/img/product/skate/complete_skate/baker_set1.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body bg-light">                        
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Baker Set Black</a>
-                            <p class="card-text text-dark">
-                                <b>
-                                Price 1,600 baht
-                                </b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <a href="shop-single.html">
-                            <img src="./main/img/product/skate/complete_skate/creature_set1.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body bg-light">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Creature Set</a>
-                            <p class="card-text text-dark">
-                                <b>
-                                    price 2,600 Baht
+        </section>
+        <!-- End Article -->
+    
 
-                                </b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <a href="shop-single.html">
-                            <img src="./main/img/product/skate/complete_skate/simon_bannerot.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body bg-light">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Simon Banerot Set</a>
-                            <p class="card-text text-dark">
-                                <b>
-                                    price 3,600 Baht
-
-                                </b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <a href="shop-single.html">
-                            <img src="./main/img/product/skate/complete_skate/enjoi_1.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body bg-light">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark"> Deck Enjoi</a>
-                            <p class="card-text text-dark">
-                                <b>
-                                    price 2,400 Baht
-
-                                </b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
     <!-- End Product New -->
-   <section class="bg-light">
-   <div class="container bg-light">
-        <div class="row bg-light text-center">
-                <hr>
-    </div>
-    </section>
 
 
     <!-- Start Product Hit -->
-    <section class="bg-light">
+    {{-- <section class="bg-light">
         <div class="container py-5">
             <div class="row py-3">
                 <div class="col-lg-6 ">
@@ -242,7 +194,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Product Hit-->
 
 

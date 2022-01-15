@@ -98,6 +98,9 @@
                           Product Name
                         </th>
                         <th>
+                          Brand
+                        </th>
+                        <th>
                           Image Product
                         </th>
                         <th>
@@ -120,6 +123,7 @@
                             <tr>
                               <td>{{ $product->id_product }}</td>
                               <td>{{ $product->name_product }}</td>
+                              <td>{{ $product->brand }}</td>
                               <td>
                                 <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" alt="" style="width: 100px">
                               </td>

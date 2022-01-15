@@ -82,6 +82,10 @@
                             <label>Product Name</label>
                             <input type="text" name="name" class="form-control" value="{{$product->name_product}}">
                           </div>
+                          <div class="form-group">
+                            <label>Brand</label>
+                            <input type="text" name="brand" class="form-control" value="{{$product->brand}}">
+                          </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category</label>
                                 <select class="custom-select" name="category">
@@ -97,6 +101,10 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Price</label>
                                 <input type="text" name="price" class="form-control" placeholder="price" mane="price" value="{{$product->price}}">
+                            </div>
+                            <div class="form-group">
+                              <label>Description</label>
+                              <textarea class="form-control" aria-label="With textarea" name="description">{{$product->description}}</textarea>
                             </div>
                             <div class="form-group">
                               <div class="input-group mb-3">

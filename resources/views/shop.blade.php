@@ -1,229 +1,57 @@
 @extends('layouts.main.index')
 
 @section('content')
-    <!-- Start Side Bar -->
-    <section class="bg-white">
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-md-4">
-                    <h3 class="h2 text-black"><b>Category</b></h3>
-                    <div class="card" style="width: 18rem;">
-                        <ul class="list-group list-group-flush">
-                        @foreach ($category as $categories)
-                            <a href="{{url('/product/category/'.$categories->id_typeproduct)}}" class="list-group-item list-group-item-action">{{$categories->typeproduct_name}}</a>
-                        @endforeach
-                            
-                            
+
+        <!-- Start Content -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="list-unstyled templatemo-accordion">
+                        <li class="pb-3">
+                            <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                                <h1 class="h2 pb-4">Categories</h1>
+                                <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                            </a>
+                            <ul class="collapse show list-unstyled pl-3">
+                                @foreach ($category as $categories)
+                                    <li><a class="text-decoration-none" href="{{url('/product/category/'.$categories->id_typeproduct)}}">{{$categories->typeproduct_name}}</a></li>
+                                @endforeach
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+    @foreach ($product as $product)
+        <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="{{asset('admin/asset/img/product/'.$product->pic_product)}}">
+                                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                        <ul class="list-unstyled">
+                                            <li><a class="btn btn-success text-white mt-2" href="{{url('shop-single/'.$product->id_product)}}"><i class="far fa-eye"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <a href="{{url('shop-single/'.$product->id_product)}}" class="h3 text-decoration-none"><b>{{$product->name_product}}</b></a>
+                                    <p class="text-center mb-0">Price {{ $product->price }} bath</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    @endforeach
+                    <div div="row">
+                        <ul class="pagination pagination-lg justify-content-end">
+                            <li class="page-item disabled">
+                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1"></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-    <!-- End side bar-->
-
-    <!-- Start Shop -->
-                <div class="col-md-8 ">
-                <h1 class="h2 text-black text-center"><b>Product</b></h1>
-                        
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Decks</b></h3>
-                        <div class="card-group">
-                            @foreach ($deck as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                    
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Shoes</b></h3>
-                        <div class="card-group">
-                            @foreach ($shoes as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                        
-                    <div class="row py-3">                    
-                        <h3 class="h4 text-black"><b>T-Shirts</b></h3>
-                            <div class="card-group">
-                                @foreach ($shirt as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>     
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Complete Skateborad</b></h3>
-                        <div class="card-group">
-                            @foreach ($CPskate as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Safety</b></h3>
-                        <div class="card-group">
-                            @foreach ($safety as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Trucks</b></h3>
-                        <div class="card-group">
-                            @foreach ($truck as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Wheels</b></h3>
-                        <div class="card-group">
-                            @foreach ($wheels as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Bearings</b></h3>
-                        <div class="card-group">
-                            @foreach ($bearing as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Grip Tape</b></h3>
-                        <div class="card-group">
-                            @foreach ($gripTape as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>hardware</b></h3>
-                        <div class="card-group">
-                            @foreach ($hardware as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                                                            
-                    <div class="row py-3">
-                        <h3 class="h4 text-black"><b>Accessories</b></h3>
-                        <div class="card-group">
-                            @foreach ($accessories as $product)
-                                <div class="card">
-                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $product->name_product }}</h5>
-                                        <p class="card-text">Price {{ $product->price }} bath</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">{{ $product->updated_at}}</small>
-                                    </div>
-                                </div>
-                                @endforeach
-                        </div>  
-                    </div>
-                    
-                </div>
             </div>
         </div>
-    </section>
-    <!-- End Shop -->
+        <!-- End Content -->
 @endsection

@@ -48,6 +48,8 @@ class ProductController extends Controller
         $product->name_product = $request->name;
         $product->price = $request->price;
         $product->id_typeproduct = $request->category;
+        $product->brand = $request->brand;
+        $product->description = $request->description;
         
         
         if ($request ->hasFile('image')) {
@@ -112,11 +114,15 @@ class ProductController extends Controller
             $product->name_product = $request->name;
             $product->price = $request->price;
             $product->id_typeproduct = $request->category;
+            $product->brand = $request->brand;
+            $product->description = $request->description;
         }else{
             $product = Product::find($id_product);
             $product->name_product = $request->name;
             $product->price = $request->price;
             $product->id_typeproduct = $request->category;
+            $product->brand = $request->brand;
+            $product->description = $request->description;
         }
         $product->save();
 
