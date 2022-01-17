@@ -73,7 +73,7 @@
                         <b class="underline">
                           <img class="avatar border-gray" src="{{asset('main/img/jakkaphat.jpg')}}" alt="">
                           <h5 class="">
-                            Jakkaphat
+                            Chakkaphat
                             Chanamee
                           
                           </h5>

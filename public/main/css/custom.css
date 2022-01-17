@@ -12,6 +12,9 @@
 .card-user .image{
     height: 140px;
 }
+.card-user .image input[type = "file"]{
+position: initial;
+}
 .card .image{
     overflow: hidden;
     height: 200;
@@ -67,6 +70,9 @@ b{
 }
 .edit-button .btn{
     border-radius: 24px;
+    width: 110px;
+    padding-left: initial;
+    padding-right: initial;
 }
 .close-button{
     cursor: pointer;
@@ -102,4 +108,17 @@ b{
 }
 .edit-label{
     text-align: left;
+}
+.upload{
+    position: relative;
+    padding: initial;
+    font-size: 15px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+.upload input[type="file"]{
+    cursor: pointer;
+    position: absolute;
+    transform: scale(1.5);
+    opacity: 0;
 }

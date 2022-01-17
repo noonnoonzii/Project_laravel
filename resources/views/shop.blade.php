@@ -22,33 +22,38 @@
                     </ul>
                 </div>
 
-    @foreach ($product as $product)
+    
         <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 product-wap rounded-0">
-                                <div class="card rounded-0">
-                                    <img class="card-img rounded-0 img-fluid" src="{{asset('admin/asset/img/product/'.$product->pic_product)}}">
-                                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                        <ul class="list-unstyled">
-                                            <li><a class="btn btn-success text-white mt-2" href="{{url('shop-single/'.$product->id_product)}}"><i class="far fa-eye"></i></a></li>
-                                        </ul>
+                        @if (count($product)>0)
+                            @foreach ($product as $shop)
+                            <div class="col-md-4">
+                                <div class="card mb-4 product-wap rounded-0">
+                                    <div class="card rounded-0">
+                                        <img class="card-img rounded-0 img-fluid" src="{{asset('admin/asset/img/product/'.$shop->pic_product)}}">
+                                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                            <ul class="list-unstyled">
+                                                <li><a class="btn btn-success text-white mt-2" href="{{url('shop-single/'.$shop->id_product)}}"><i class="far fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="{{url('shop-single/'.$shop->id_product)}}" class="h3 text-decoration-none"><b>{{$shop->name_product}}</b></a>
+                                        <p class="text-center mb-0">Price {{ $shop->price }} bath</p>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <a href="{{url('shop-single/'.$product->id_product)}}" class="h3 text-decoration-none"><b>{{$product->name_product}}</b></a>
-                                    <p class="text-center mb-0">Price {{ $product->price }} bath</p>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-    @endforeach
-                    <div div="row">
-                        <ul class="pagination pagination-lg justify-content-end">
-                            <li class="page-item disabled">
-                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1"></a>
-                            </li>
-                        </ul>
+                            @endforeach
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                {{ $product->Links() }}
+                            </ul>
+                        </nav>
+                        @else
+                        <p>No Page Found</p>
+                        @endif
+                        
+
                     </div>
                 </div>
             </div>

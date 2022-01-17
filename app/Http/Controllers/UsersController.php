@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use Image;
+use File;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -75,13 +78,52 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $users = User::find($id);
-        $users->name = $request->name;
-        $users->lastname = $request->lname;
-        $users->phone = $request->phone;
-        $users->email = $request->email;
-        $users->address = $request->address;
+        //Profile image edit
+        if($request ->hasFile('profile')){
+            $users = User::find($id);
+            if ($users->image_profile != 'user'){
+                File::delete(public_path().'admin/asset/img/users/profile/'.$users->image_profile);
+            }
+            $filename =Str::random(8).'.'.$request->file('profile')->getClientOriginalExtension();
+            $request->file('profile')->move(public_path().'/admin/asset/img/users/profile/',$filename);
+            Image::make(public_path().'/admin/asset/img/users/profile/'.$filename);
+            $users->image_profile = $filename;
+            $users->name = $request->name;
+            $users->lastname = $request->lname;
+            $users->phone = $request->phone;
+            $users->email = $request->email;
+            $users->address = $request->address;
+        }else{
+            $users = User::find($id);
+            $users->name = $request->name;
+            $users->lastname = $request->lname;
+            $users->phone = $request->phone;
+            $users->email = $request->email;
+            $users->address = $request->address;
+        }
+        //Cover image edit
+        if($request ->hasFile('cover')){
+            $users = User::find($id);
+            if ($users->cover_image != 'user'){
+                File::delete(public_path().'admin/asset/img/users/cover/'.$users->cover_image);
+            }
+            $filename =Str::random(8).'.'.$request->file('cover')->getClientOriginalExtension();
+            $request->file('cover')->move(public_path().'/admin/asset/img/users/cover/',$filename);
+            Image::make(public_path().'/admin/asset/img/users/cover/'.$filename);
+            $users->cover_image = $filename;
+            $users->name = $request->name;
+            $users->lastname = $request->lname;
+            $users->phone = $request->phone;
+            $users->email = $request->email;
+            $users->address = $request->address;
+        }else{
+            $users = User::find($id);
+            $users->name = $request->name;
+            $users->lastname = $request->lname;
+            $users->phone = $request->phone;
+            $users->email = $request->email;
+            $users->address = $request->address;
+        }
         $users->save();
         return redirect()->route('home');
     }

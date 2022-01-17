@@ -1,5 +1,6 @@
 @extends('layouts.main.profile')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,11 +17,11 @@
                     </div>
                     <div class="card card-user">
                         <div class="image">
-                          <img src="{{asset('main/img/park.jpg')}}" alt="...">
+                          <img src="{{asset('admin/asset/img/users/cover/'.Auth::user()->cover_image)}}" alt="...">
                         </div>
                         <div class="card-body">
                             <ul  class="edit-button">
-                                <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-dark " style="width: 150px">Edit Profile</a>
+                                <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-dark ">Edit Profile</a>
                                 <!-- start popup model Edit profile -->
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -36,12 +37,12 @@
                                       </div>
                                       <div class="card-user">
                                         <div class="image">
-                                          <img src="{{asset('main/img/park.jpg')}}" alt="...">
+                                            <img src="{{asset('admin/asset/img/users/cover/'.Auth::user()->cover_image)}}" alt="..." id="showCover">
                                         </div>
                                         <div class="card-body">
                                           <div class="author">
                                             <a href="#">
-                                              <img class="avatar border-gray" src="{{asset('main/img/logo.jpg')}}" alt="">
+                                              <img class="avatar border-gray" src="{{asset('admin/asset/img/users/profile/'.Auth::user()->image_profile)}}" alt="" id="showProfile">
                                             </a>
                                             <h5 class="edit-username">
                                               {{ Auth::user()->username }}
@@ -87,6 +88,16 @@
                                         </div>
                                       </div>
                                       <div class="modal-footer">
+                                        <div class="upload">
+                                          <button type="button" class=" btn btn-warning">
+                                            Edit Profile Picture
+                                            <input type="file" class="hidden" name="profile" id="profile">
+                                          </button>
+                                          <button type="button" class=" btn btn-warning">
+                                            Edit Cover Photo 
+                                            <input type="file" class="hidden" name="cover" id="cover">
+                                          </button>
+                                        </div>
                                         <button type="submit" class="btn btn-danger">Save changes</button>
                                       </div>
                                       </form>
@@ -99,7 +110,7 @@
                           <div class="author">
                                
                             <a href="#">
-                              <img class="avatar border-gray" src="{{asset('main/img/logo.jpg')}}" alt="">
+                              <img class="avatar border-gray" src="{{asset('admin/asset/img/users/profile/'.Auth::user()->image_profile)}}" alt="">
                                
                             </a>
 
@@ -133,4 +144,26 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#profile').change(function(e){
+          var reader = new FileReader();
+          reader.onload = function(e){
+              $('#showProfile').attr('src',e.target.result);
+          }
+          reader.readAsDataURL(e.target.files['0']);
+      });
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#cover').change(function(e){
+          var reader = new FileReader();
+          reader.onload = function(e){
+              $('#showCover').attr('src',e.target.result);
+          }
+          reader.readAsDataURL(e.target.files['0']);
+      });
+  });
+</script>
 @endsection
