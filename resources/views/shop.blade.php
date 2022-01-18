@@ -30,7 +30,13 @@
                             <div class="col-md-4">
                                 <div class="card mb-4 product-wap rounded-0">
                                     <div class="card rounded-0">
-                                        <img class="card-img rounded-0 img-fluid" src="{{asset('admin/asset/img/product/'.$shop->pic_product)}}">
+                                        <img class="card-img rounded-0 img-fluid" src="{{asset('admin/asset/img/product/'.$shop->pic_product)}}" 
+                                        style="border: 1px solid #ddd;
+                                        border-radius: 2px;
+                                        padding: 8px;
+                                        width:415px;
+                                        height:300px;
+                                        object-fit: contain;">
                                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                             <ul class="list-unstyled">
                                                 <li><a class="btn btn-success text-white mt-2" href="{{url('shop-single/'.$shop->id_product)}}"><i class="far fa-eye"></i></a></li>

@@ -62,6 +62,9 @@ class WelcomeController extends Controller
         return view('news',compact('news'));
     }
     public function about(){
+        
         return view('about');
     }
+    
 }
+

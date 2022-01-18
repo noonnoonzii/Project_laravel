@@ -2,7 +2,9 @@
 
 @section('content')
 <section class="ftco-section">
-    <div class="container">
+    <div class="container" 
+    style=" margin-bottom: 20px;
+            margin-top: 20px;">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
                 <h1 class="heading-section">Account</h1>
@@ -16,7 +18,7 @@
                                     @csrf
 
                                     <div class="form-group">
-                                            <input id="username" type="text" class="form-control text-center  @error('username') is-invalid @enderror" placeholder="Username" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                            <input id="username" type="text" class="form-control text-center  @error('username') is-invalid @enderror" placeholder="Username" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus style="margin-bottom: 5px;>
                                             @error('username')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -24,7 +26,7 @@
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                            <input id="name" type="text" class="form-control text-center @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                            <input id="name" type="text" class="form-control text-center @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus style="margin-bottom: 5px;">
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -33,7 +35,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                            <input id="email" type="email" class="form-control text-center @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                            <input id="email" type="email" class="form-control text-center @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email" style="margin-bottom: 5px;>
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +45,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                            <input id="password" type="password" class="form-control text-center @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="new-password">
+                                            <input id="password" type="password" class="form-control text-center @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="new-password" style="margin-bottom: 5px;>
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -53,7 +55,7 @@
                                     </div>
 
                                     <div class="form-group md-8">
-                                            <input id="password-confirm" type="password" class="form-control text-center" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
+                                            <input id="password-confirm" type="password" class="form-control text-center" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password" style="margin-bottom: 5px;>
                                         </div>
                                     </div>
 

@@ -42,7 +42,7 @@
                             <a class="nav-link text-white" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('shop')}}">Shop</a>
+                            <a class="nav-link text-white" href="{{url('product')}}">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{route('news')}}">News</a>
@@ -145,15 +145,16 @@
                 <div class="col-md-6 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Deck</a></li>
-                        <li><a class="text-decoration-none" href="#">Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">T-Shirts</a></li>
-                        <li><a class="text-decoration-none" href="#">Complete-Skateboards</a></li>
-                        <li><a class="text-decoration-none" href="#">Trucks</a></li>
-                        <li><a class="text-decoration-none" href="#">Wheels</a></li>
-                        <li><a class="text-decoration-none" href="#">Grip Tape</a></li>
-                        <li><a class="text-decoration-none" href="#">Hardware</a></li>
-                        <li><a class="text-decoration-none" href="#">Accessories</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=8)}}">Deck</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=14)}}">Shoes</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=6)}}">T-Shirts</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=7)}}">Complete-Skateboards</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=9)}}">Trucks</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=10)}}">Wheels</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=11)}}">Grip Tape</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=12)}}">Hardware</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=13)}}">Accessories</a></li>
+                        <li><a class="text-decoration-none" href="{{url('/product/category/'.$category=15)}}">Safety</a></li>
                     </ul>
                 </div>
 

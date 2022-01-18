@@ -66,7 +66,7 @@ Route::get('/admin/home_pic/delete','HomepicController@destroy');
 Auth::routes();
     //ShopCategory
 Route::get('/product/category/{id}','WelcomeController@findCategory');
-Route::get('/shop','Welcomecontroller@shop')->name('shop');
+Route::get('/product','Welcomecontroller@shop');
 Route::get('/shop-single/{id}','WelcomeController@singleShop');
 
 Route::get('/home', 'WelcomeController@index')->name('home');

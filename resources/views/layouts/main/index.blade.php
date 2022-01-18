@@ -41,7 +41,7 @@
                             <a class="nav-link text-white" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('shop')}}">Product</a>
+                            <a class="nav-link text-white" href="{{url('product')}}">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{route('news')}}">News</a>

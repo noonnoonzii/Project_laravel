@@ -91,10 +91,16 @@
                 <div class="row">
                     @foreach ($hot as $product)
                     <div class="col-12 col-md-4 mb-4">
-                        <div class="card h-100">
-                            <a href="{{url('shop-single/'.$product->id_product)}}">
-                                <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="...">
-                            </a>
+                        <div class="card">
+                                <a href="{{url('shop-single/'.$product->id_product)}}">
+                                    <img src="{{asset('admin/asset/img/product/'.$product->pic_product)}}" class="card-img-top" alt="..." 
+                                    style=" border: 1px solid #ddd;
+                                            border-radius: 4px;
+                                            padding: 8px;
+                                            width:415px;
+                                            height:400px;
+                                            object-fit: contain;">
+                                </a>
                             <div class="card-body">
                                 <a href="shop-single.html" class="h2 text-decoration-none text-dark">{{$product->name_product}}</a>
                                 <p class="card-text">
@@ -103,7 +109,10 @@
                                 <ul class="list-unstyled d-flex justify-content-between">
                                     <li class="text-muted text-right">Price {{ $product->price }} bath.</li>
                                 </ul>
-                                <p class="text-muted">{{$product->updated_at}}</p>
+                                <div class="card-footer">
+                                    <p class="text-muted">{{$product->updated_at}}</p>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
