@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/product',[\App\Http\Controllers\API\ProductController::class,'index']);
+Route::get('/category',[\App\Http\Controllers\API\CategoryController::class,'index']);
+Route::get('/news',[\App\Http\Controllers\API\NewsController::class,'index']);
+Route::get('/users',[\App\Http\Controllers\API\UsersController::class,'index']);
